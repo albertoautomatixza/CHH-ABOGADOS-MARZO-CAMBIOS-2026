@@ -23,7 +23,7 @@
     img{max-width:100%;display:block;height:auto;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
     .icon-square{width:60px;height:60px;border-radius:18px;background:#161515;display:grid;place-items:center;color:var(--brand-red);box-shadow:0 12px 28px rgba(0,0,0,0.2);position:relative;overflow:hidden}
-    .icon-square svg{width:30px;height:30px;stroke:var(--brand-red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
+    .icon-square svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
     .icon-square::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,0.2),rgba(255,255,255,0) 60%);pointer-events:none}
     .icon-square::after{content:"";position:absolute;inset:-6px;border-radius:22px;border:1px solid rgba(220,23,62,0.25)}
     .icon-square--light{background:#2a292a}
@@ -272,8 +272,8 @@
     .footer-column--brand p{margin:0;color:rgba(255,255,255,0.72);max-width:360px}
     .footer-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
     .footer-list-item{display:grid;grid-template-columns:auto 1fr;align-items:flex-start;gap:14px;color:rgba(255,255,255,0.86)}
-    .footer-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
-    .footer-icon svg{width:100%;height:100%;stroke:var(--brand-red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .footer-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;color:var(--brand-red)}
+    .footer-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .footer-list-item strong{font-family:var(--font-secondary);letter-spacing:.04em;color:#fff}
     .footer-list-item a{color:#fff;font-family:var(--font-secondary);font-weight:600}
     .footer-list-item a:hover,.footer-list-item a:focus{color:var(--brand-red)}
