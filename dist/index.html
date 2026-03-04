@@ -9,8 +9,7 @@
   <link rel="preload" as="image" href="/assets/1logo%20chh%20web%20001-DsULS5Vc.svg" type="image/svg+xml" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root{
       --brand-red:#dc173e;
@@ -41,26 +40,22 @@
     .icon-square::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 120% at 0% 0%,rgba(255,255,255,0.2),rgba(255,255,255,0) 60%);pointer-events:none}
     .icon-square::after{content:"";position:absolute;inset:-6px;border-radius:22px;border:1px solid rgba(220,23,62,0.25)}
     .icon-square--light{background:#2a292a}
-    [data-animate]{opacity:0;transform:translateY(48px);transition:opacity 1.5s cubic-bezier(0.37,0,0.63,1),transform 1.5s cubic-bezier(0.37,0,0.63,1)}
+    [data-animate]{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(0.22,1,0.36,1),transform .75s cubic-bezier(0.22,1,0.36,1);will-change:opacity,transform}
     [data-animate].is-visible{opacity:1;transform:translateY(0)}
-    [data-animate].delay-1{transition-delay:.15s}
-    [data-animate].delay-2{transition-delay:.3s}
-    [data-animate].delay-3{transition-delay:.45s}
-    [data-animate].delay-4{transition-delay:.6s}
+    [data-animate].delay-1{transition-delay:.08s}
+    [data-animate].delay-2{transition-delay:.16s}
+    [data-animate].delay-3{transition-delay:.24s}
+    [data-animate].delay-4{transition-delay:.32s}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:none;border-radius:999px;cursor:pointer;background:var(--brand-red);color:#fff;transition:.25s;font-family:var(--font-secondary)}
     .btn:hover{filter:saturate(1.1);opacity:.92}
     .main-header{position:fixed;top:0;left:0;right:0;background:var(--brand-gray);padding:15px 30px;z-index:1000;box-shadow:0 12px 28px rgba(0,0,0,0.25)}
     .navbar{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative}
     .navbar-left{display:flex;align-items:center;gap:20px;min-width:0;flex:1}
     .logo-link{display:flex;align-items:center}
+    .brand-logo{height:60px;width:auto}
     .logo-placeholder{display:flex;align-items:center;justify-content:center;height:50px;min-width:140px;padding:0 18px;border-radius:16px;border:1px dashed rgba(255,255,255,0.35);background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);font-family:var(--font-secondary);font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:border-color .3s ease,background .3s ease,color .3s ease;position:relative}
     .logo-placeholder:hover,.logo-placeholder:focus-visible{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.08);color:#fff}
-    .logo-placeholder__text{pointer-events:none}
     .logo-placeholder--footer{height:70px;min-width:180px;margin:0 0 18px;border-color:transparent;background:transparent;align-self:flex-start;border:none}
-    .brand-stack{display:flex;flex-direction:column;gap:4px;line-height:1}
-    .brand-stack__title{font-family:var(--font-secondary);font-size:22px;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase}
-    .brand-stack__title:focus-visible{outline:2px solid rgba(255,255,255,0.6);outline-offset:6px;border-radius:6px}
-    .brand-stack__tagline{font-family:var(--font-secondary);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,0.72)}
     .nav-menu{list-style:none;display:flex;gap:24px;margin:0 0 0 auto;padding:0;font-family:var(--font-secondary)}
     .nav-menu li a{color:#fff;text-decoration:none;font-weight:600;letter-spacing:.05em;text-transform:none;transition:color .3s ease}
     .nav-menu li a:hover,.nav-menu li a:focus{color:var(--brand-red)}
@@ -73,7 +68,6 @@
     body.nav-open{overflow:hidden}
     @media (max-width:900px){
       .navbar{gap:18px}
-      .brand-stack__title{font-size:20px}
       .nav-menu{gap:18px}
     }
     @media (max-width:768px){
@@ -83,8 +77,6 @@
     }
     @media (max-width:600px){
       .logo-placeholder{min-width:120px;padding:0 16px}
-      .brand-stack__title{font-size:18px;letter-spacing:.06em}
-      .brand-stack__tagline{font-size:11px;letter-spacing:.24em}
     }
     main{padding-top:0}
     .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(180deg,#050505 0%,#111 60%,#050505 100%);overflow:hidden;text-align:center;color:#fff;padding-top:140px;padding-bottom:80px}
@@ -98,7 +90,7 @@
     .hero-content{display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center;text-align:center;position:relative;z-index:1}
     .hero-actions{display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center}
     .hero-actions small{color:var(--muted-2);font-size:14px;text-transform:uppercase;letter-spacing:.2em;font-family:var(--font-secondary)}
-    .chevron{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--brand-red);animation:bounce 1.5s infinite;font-size:33px;z-index:1}
+    .chevron{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);color:var(--brand-red);animation:bounce 1.5s infinite;font-size:33px;z-index:1}
     @keyframes bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
     section{padding:96px 0}
     .section-title{font-size:clamp(32px,4vw,48px);font-weight:800;text-align:center;margin:0 0 10px}
@@ -120,7 +112,7 @@
     .impact-card .impact-number{display:flex;align-items:baseline;justify-content:center;gap:6px;font-size:38px;color:#fff;margin:0;font-family:var(--font-secondary);letter-spacing:.04em;line-height:1}
     .impact-number-digits{display:flex;gap:6px;align-items:flex-start}
     .digit-column{position:relative;width:.75em;height:1em;overflow:hidden;display:inline-flex;justify-content:center}
-    .digit-column-inner{display:flex;flex-direction:column;will-change:transform;transform:translate3d(0,0,0);transition:transform 1.8s cubic-bezier(0.37,0,0.63,1)}
+    .digit-column-inner{display:flex;flex-direction:column;will-change:transform;transform:translate3d(0,0,0);transition:transform 1.1s cubic-bezier(0.22,1,0.36,1)}
     .digit-column-inner span{display:block;height:1em;line-height:1em;font-family:var(--font-secondary)}
     .impact-number-static{display:inline-flex;align-items:center;font-family:var(--font-secondary)}
     .impact-number-suffix,.impact-number-prefix{font-size:.6em;letter-spacing:.08em;text-transform:uppercase;align-self:center;padding-top:0}
@@ -308,7 +300,7 @@
     <nav class="navbar" aria-label="Navegación principal">
       <div class="navbar-left">
         <a href="index.html" class="logo-link" aria-label="Inicio - CHH Penalistas">
-          <img src="/assets/1logo%20chh%20web%20001-DsULS5Vc.svg" alt="CHH Penalistas" width="176" height="60" decoding="async" fetchpriority="high" style="height: 60px; width: auto;">
+          <img class="brand-logo" src="/assets/1logo%20chh%20web%20001-DsULS5Vc.svg" alt="CHH Penalistas" width="176" height="60" decoding="async" fetchpriority="high">
         </a>
       </div>
       <ul class="nav-menu" id="primary-menu">
@@ -348,7 +340,7 @@
         <h2 class="section-title" data-animate>Misión y Visión</h2>
         <div class="section-rule delay-1" aria-hidden="true" data-animate></div>
         <div class="mission-vision-grid">
-          <article class="mission-card delay-1" data-animate data-bg-src="/public/CHH-ABOGADOS-MISION.jpg">
+          <article class="mission-card" data-animate data-bg-src="/public/CHH-ABOGADOS-MISION.jpg">
             <span class="icon-square" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="8" />
@@ -362,7 +354,7 @@
             <h3>Misión</h3>
             <p>Ofrecer atención especializada, personalizada y estratégica para conseguir soluciones eficaces a los problemas de los clientes y garantizar la excelencia en la práctica del derecho penal mediante técnicas y métodos innovadores en cumplimiento normativo, consultoría, asesoría jurídica y defensa particular.</p>
           </article>
-          <article class="mission-card delay-2" data-animate data-bg-src="/public/CHH-ABOGADOS-VISION.jpg">
+          <article class="mission-card" data-animate data-bg-src="/public/CHH-ABOGADOS-VISION.jpg">
             <span class="icon-square" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z" />
@@ -406,14 +398,14 @@
                   <p>Analizamos hechos, documentación y contexto regulatorio para proyectar escenarios realistas desde el primer contacto.</p>
                 </div>
               </div>
-              <div class="timeline-item delay-1" role="listitem" data-animate>
+              <div class="timeline-item" role="listitem" data-animate>
                 <span class="timeline-marker" aria-hidden="true"></span>
                 <div class="timeline-content">
                   <h4>Diseño de táctica personalizada</h4>
                   <p>Construimos rutas de acción con base en compliance penal, litigio estratégico y producción probatoria innovadora.</p>
                 </div>
               </div>
-              <div class="timeline-item delay-2" role="listitem" data-animate>
+              <div class="timeline-item" role="listitem" data-animate>
                 <span class="timeline-marker" aria-hidden="true"></span>
                 <div class="timeline-content">
                   <h4>Acompañamiento 24/7</h4>
@@ -426,18 +418,18 @@
       </div>
     </section>
 
-    <section id="respaldo" class="metrics" data-animate>
+    <section id="respaldo" class="metrics" data-animate data-animate-group data-bg-sync-group>
       <div class="container" data-animate>
         <h2 class="section-title" data-animate>Resultados y Valores</h2>
-        <div class="section-rule delay-1" aria-hidden="true" data-animate></div>
-        <p class="section-lead delay-2" data-animate>Un carrete de logros cuantificables y principios irrenunciables que respaldan cada representación de CHH Penalistas.</p>
+        <div class="section-rule" aria-hidden="true" data-animate></div>
+        <p class="section-lead" data-animate>Un carrete de logros cuantificables y principios irrenunciables que respaldan cada representación de CHH Penalistas.</p>
         <div class="metrics-carousel" data-animate>
           <button class="metrics-control metrics-control--prev" type="button" aria-label="Ver valor anterior">
             <span class="metrics-control-icon" aria-hidden="true">⬇</span>
           </button>
           <div class="metrics-viewport">
             <div class="metrics-track" role="list" aria-label="Resultados destacados y valores del despacho">
-              <article class="metric-card metric-card--image metric-card--img1 delay-1" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS1.jpg">
+              <article class="metric-card metric-card--image metric-card--img1" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS1.jpg">
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />
@@ -447,7 +439,7 @@
                 <h3>Integridad</h3>
                 <p>Honestidad y transparencia en cada paso del proceso.</p>
               </article>
-              <article class="metric-card metric-card--image metric-card--img2 delay-2" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS2.jpg">
+              <article class="metric-card metric-card--image metric-card--img2" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS2.jpg">
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M12 4v13" />
@@ -460,7 +452,7 @@
                 <h3>Responsabilidad</h3>
                 <p>Compromiso total al tratar cada caso como propio.</p>
               </article>
-              <article class="metric-card metric-card--image metric-card--img3 delay-3" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS3.jpg">
+              <article class="metric-card metric-card--image metric-card--img3" role="listitem" data-animate data-bg-src="/public/CHH-ABOGADOS-RESULTADOS3.jpg">
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 6h10v7H8l-4 4V6z" />
@@ -470,7 +462,7 @@
                 <h3>Franqueza</h3>
                 <p>Diagnósticos claros y objetivos para pronósticos realistas.</p>
               </article>
-              <article class="metric-card delay-4" role="listitem" data-animate>
+              <article class="metric-card" role="listitem" data-animate>
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M8 4h8v3a4 4 0 0 1-8 0V4z" />
@@ -484,7 +476,7 @@
                 <h3>Excelencia</h3>
                 <p>Servicios respaldados por sólida preparación técnica y jurídica.</p>
               </article>
-              <article class="metric-card delay-1" role="listitem" data-animate>
+              <article class="metric-card" role="listitem" data-animate>
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M9 10a5 5 0 1 1 6 0c-1.2 1-2 2.5-2 4.2h-2c0-1.7-.8-3.2-2-4.2z" />
@@ -495,7 +487,7 @@
                 <h3>Innovación</h3>
                 <p>Enfoques modernos y vanguardistas como compliance penal y prueba técnica.</p>
               </article>
-              <article class="metric-card delay-2" role="listitem" data-animate>
+              <article class="metric-card" role="listitem" data-animate>
                 <span class="icon-square" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 12l4-4 3 3 3-3 4 4-2.5 2.5" />
@@ -522,7 +514,7 @@
         <div class="section-rule delay-1" aria-hidden="true" data-animate></div>
         <p class="section-lead delay-2" data-animate>Resultados cuantificables que respaldan nuestra dedicación permanente en la defensa penal estratégica.</p>
         <div class="impact-cards" role="list" aria-label="Indicadores clave del despacho">
-          <article class="impact-card delay-1" role="listitem" data-animate>
+          <article class="impact-card" role="listitem" data-animate>
             <span class="icon-square" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M4 19h16" />
@@ -536,7 +528,7 @@
             <strong class="impact-number" data-number="20" data-suffix="+">20+</strong>
             <p>Años de experiencia combinada en litigio penal estratégico.</p>
           </article>
-          <article class="impact-card delay-2" role="listitem" data-animate>
+          <article class="impact-card" role="listitem" data-animate>
             <span class="icon-square" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="8" />
@@ -548,7 +540,7 @@
             <strong class="impact-number" data-number="95" data-suffix="%">95%</strong>
             <p>Índice de resolución favorable en procedimientos complejos.</p>
           </article>
-          <article class="impact-card delay-3" role="listitem" data-animate>
+          <article class="impact-card" role="listitem" data-animate>
             <span class="icon-square" aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="8" />
@@ -795,7 +787,7 @@
       <div class="footer-top">
         <div class="footer-column footer-column--brand">
           <a class="logo-placeholder logo-placeholder--footer" href="index.html" aria-label="Inicio">
-            <img src="/assets/1logo%20chh%20web%20copy%20copy%20copy-Dq1D3NY3.svg" alt="CHH Penalistas" width="176" height="60" loading="lazy" decoding="async" style="height: 60px; width: auto;">
+            <img class="brand-logo" src="/assets/1logo%20chh%20web%20copy%20copy%20copy-Dq1D3NY3.svg" alt="CHH Penalistas" width="176" height="60" loading="lazy" decoding="async" fetchpriority="low">
           </a>
           <h3>CHH Penalistas</h3>
           <p>Excelencia, integridad e innovación en defensa penal. Protegemos sus derechos con responsabilidad, franqueza y confianza absoluta.</p>
@@ -880,7 +872,7 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/524495489025" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20role='img'%20aria-label='WhatsApp'%3e%3cpath%20fill='%2325D366'%20d='M12%202a10%2010%200%200%200-8.66%2015l-1.3%204.76%204.88-1.28A10%2010%200%201%200%2012%202Z'/%3e%3cpath%20fill='%23fff'%20d='M17.44%2014.31c-.23-.12-1.38-.68-1.6-.75-.22-.08-.38-.12-.54.11-.16.23-.62.75-.76.91-.14.16-.27.18-.5.06-.23-.12-.98-.36-1.86-1.15-.69-.61-1.15-1.37-1.29-1.6-.14-.23-.02-.35.1-.47.11-.11.23-.27.34-.41.11-.14.15-.23.23-.38.08-.16.04-.29-.02-.41-.06-.12-.54-1.31-.74-1.79-.2-.48-.4-.41-.54-.42h-.46c-.16%200-.41.06-.62.29-.21.23-.81.79-.81%201.93%200%201.14.83%202.24.95%202.4.12.16%201.64%202.5%203.98%203.5.56.24%201%20.38%201.34.48.56.18%201.07.15%201.47.09.45-.07%201.38-.56%201.58-1.1.2-.54.2-1%20.14-1.1-.06-.1-.21-.16-.44-.27Z'/%3e%3c/svg%3e" alt="WhatsApp" width="40" height="40" loading="lazy" decoding="async" />
+    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20role='img'%20aria-label='WhatsApp'%3e%3cpath%20fill='%23000'%20d='M13.601%202.326A7.854%207.854%200%200%200%208.004%200C3.58%200%200%203.582%200%208.003a7.95%207.95%200%200%200%201.076%203.987L0%2016l4.113-1.073a7.95%207.95%200%200%200%203.89%201.019h.004C12.42%2015.946%2016%2012.365%2016%207.943a7.855%207.855%200%200%200-2.399-5.617ZM8.007%2014.59h-.003a6.6%206.6%200%200%201-3.36-.92l-.24-.142-2.44.636.65-2.381-.156-.245A6.6%206.6%200%200%201%201.41%208.003c0-3.64%202.958-6.598%206.594-6.598a6.55%206.55%200%200%201%204.67%201.94%206.55%206.55%200%200%201%201.93%204.664c0%203.64-2.959%206.581-6.597%206.581Zm3.611-4.93c-.197-.098-1.164-.573-1.344-.638-.18-.065-.312-.098-.443.099-.131.196-.508.638-.623.769-.114.131-.229.147-.426.049-.196-.098-.83-.306-1.581-.975-.585-.521-.98-1.164-1.098-1.361-.114-.196-.012-.302.086-.4.088-.088.197-.23.295-.345.098-.114.131-.196.197-.327.065-.131.033-.245-.016-.344-.049-.098-.442-1.065-.607-1.459-.16-.384-.325-.332-.442-.338-.114-.006-.245-.007-.376-.007-.131%200-.344.049-.525.246-.18.196-.688.671-.688%201.639%200%20.967.704%201.901.802%202.032.098.131%201.385%202.116%203.352%202.966.468.202.833.323%201.118.413.47.149.897.128%201.235.077.377-.056%201.164-.476%201.328-.935.163-.459.163-.852.114-.934-.049-.082-.18-.131-.377-.229Z'/%3e%3c/svg%3e" alt="WhatsApp" width="40" height="40" loading="lazy" decoding="async" fetchpriority="low" />
   </a>
 
   <script>
@@ -1173,11 +1165,7 @@
       rebuildCarousel();
 
       metricsCarouselApi = {
-        recompute: rebuildCarousel,
-        pause: function(){
-          isManuallyPaused = true;
-          stopAuto();
-        }
+        recompute: rebuildCarousel
       };
     }
 
@@ -1308,8 +1296,6 @@
         for(let col = 0; col < columns; col++){
           const cell = document.createElement('span');
           cell.className = 'hero-grid-cell';
-          cell.dataset.row = row;
-          cell.dataset.col = col;
           fragment.appendChild(cell);
           cells.push(cell);
         }
@@ -1388,15 +1374,54 @@
     }
 
     function initScrollAnimations(){
-      const animatedElements = document.querySelectorAll('[data-animate]');
-      if(animatedElements.length === 0){
+      const allAnimatedElements = Array.from(document.querySelectorAll('[data-animate]'));
+      if(allAnimatedElements.length === 0){
+        return;
+      }
+      const groupedContainers = Array.from(document.querySelectorAll('[data-animate-group]'));
+      const groupedElements = new Set();
+      groupedContainers.forEach(function(container){
+        container.querySelectorAll('[data-animate]').forEach(function(element){
+          groupedElements.add(element);
+        });
+      });
+      const animatedElements = allAnimatedElements.filter(function(element){
+        return !groupedElements.has(element);
+      });
+      const observerOptions = {threshold:0.06, rootMargin:'0px 0px -8% 0px'};
+
+      if(!('IntersectionObserver' in window)){
+        allAnimatedElements.forEach(function(element){
+          element.classList.add('is-visible');
+        });
         return;
       }
 
-      if(!('IntersectionObserver' in window)){
-        animatedElements.forEach(function(element){
-          element.classList.add('is-visible');
+      function createGroupedObserver(containers, options){
+        if(!containers.length){
+          return;
+        }
+        const groupedObserver = new IntersectionObserver(function(entries, obs){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add('is-visible');
+              entry.target.querySelectorAll('[data-animate]').forEach(function(element){
+                element.classList.add('is-visible');
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, options);
+        containers.forEach(function(container){
+          groupedObserver.observe(container);
         });
+      }
+
+      if(groupedContainers.length){
+        createGroupedObserver(groupedContainers, observerOptions);
+      }
+
+      if(animatedElements.length === 0){
         return;
       }
 
@@ -1407,7 +1432,7 @@
             obs.unobserve(entry.target);
           }
         });
-      }, {threshold:0.2, rootMargin:'0px 0px -10% 0px'});
+      }, observerOptions);
 
       animatedElements.forEach(function(element){
         observer.observe(element);
@@ -1419,22 +1444,110 @@
       if(!mediaCards.length){
         return;
       }
+      const syncGroups = Array.from(document.querySelectorAll('[data-bg-sync-group]'));
+      const groupedCards = new Set();
+      syncGroups.forEach(function(group){
+        group.querySelectorAll('[data-bg-src]').forEach(function(card){
+          groupedCards.add(card);
+        });
+      });
+      const standaloneCards = Array.from(mediaCards).filter(function(card){
+        return !groupedCards.has(card);
+      });
 
       function applyBackground(card){
-        if(!card || card.dataset.bgLoaded === 'true'){
+        if(!card || card.dataset.bgLoaded === 'true' || card.dataset.bgLoading === 'true'){
           return;
         }
         const source = card.getAttribute('data-bg-src');
         if(!source){
           return;
         }
-        card.style.setProperty('--card-bg-image', `url("${source}")`);
-        card.dataset.bgLoaded = 'true';
+        card.dataset.bgLoading = 'true';
+        const image = new Image();
+        image.decoding = 'async';
+        image.src = source;
+
+        let settled = false;
+        function finalize(){
+          if(settled){
+            return;
+          }
+          settled = true;
+          card.style.setProperty('--card-bg-image', `url("${source}")`);
+          card.dataset.bgLoaded = 'true';
+          delete card.dataset.bgLoading;
+        }
+
+        if(typeof image.decode === 'function'){
+          image.decode().then(finalize).catch(finalize);
+        } else {
+          image.onload = finalize;
+          image.onerror = finalize;
+        }
+      }
+
+      function preloadGroupBackgrounds(group){
+        if(!group || group.dataset.bgGroupLoaded === 'true' || group.dataset.bgGroupLoading === 'true'){
+          return;
+        }
+        const cards = Array.from(group.querySelectorAll('[data-bg-src]'));
+        if(!cards.length){
+          group.dataset.bgGroupLoaded = 'true';
+          return;
+        }
+        group.dataset.bgGroupLoading = 'true';
+        const tasks = cards.map(function(card){
+          const source = card.getAttribute('data-bg-src');
+          if(!source){
+            return Promise.resolve();
+          }
+          return new Promise(function(resolve){
+            const image = new Image();
+            image.decoding = 'async';
+            image.src = source;
+            if(typeof image.decode === 'function'){
+              image.decode().then(resolve).catch(resolve);
+            } else {
+              image.onload = resolve;
+              image.onerror = resolve;
+            }
+          });
+        });
+        Promise.allSettled(tasks).then(function(){
+          cards.forEach(function(card){
+            const source = card.getAttribute('data-bg-src');
+            if(!source){
+              return;
+            }
+            card.style.setProperty('--card-bg-image', `url("${source}")`);
+            card.dataset.bgLoaded = 'true';
+            delete card.dataset.bgLoading;
+          });
+          group.dataset.bgGroupLoaded = 'true';
+          delete group.dataset.bgGroupLoading;
+        });
       }
 
       if(!('IntersectionObserver' in window)){
-        mediaCards.forEach(applyBackground);
+        syncGroups.forEach(preloadGroupBackgrounds);
+        standaloneCards.forEach(applyBackground);
         return;
+      }
+
+      if(syncGroups.length){
+        const groupObserver = new IntersectionObserver(function(entries, obs){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              preloadGroupBackgrounds(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {rootMargin:'360px 0px', threshold:0.01});
+
+        syncGroups.forEach(function(group){
+          groupObserver.observe(group);
+        });
       }
 
       const observer = new IntersectionObserver(function(entries, obs){
@@ -1444,9 +1557,9 @@
             obs.unobserve(entry.target);
           }
         });
-      }, {rootMargin:'220px 0px', threshold:0.05});
+      }, {rootMargin:'320px 0px', threshold:0.01});
 
-      mediaCards.forEach(function(card){
+      standaloneCards.forEach(function(card){
         observer.observe(card);
       });
     }
@@ -1477,13 +1590,21 @@
       initDeferredBackgroundMedia();
     });
 
+    let resizeTicking = false;
     window.addEventListener('resize', function(){
-      if(navigationApi && typeof navigationApi.sync === 'function'){
-        navigationApi.sync();
+      if(resizeTicking){
+        return;
       }
-      if(metricsCarouselApi && typeof metricsCarouselApi.recompute === 'function'){
-        metricsCarouselApi.recompute();
-      }
+      resizeTicking = true;
+      window.requestAnimationFrame(function(){
+        if(navigationApi && typeof navigationApi.sync === 'function'){
+          navigationApi.sync();
+        }
+        if(metricsCarouselApi && typeof metricsCarouselApi.recompute === 'function'){
+          metricsCarouselApi.recompute();
+        }
+        resizeTicking = false;
+      });
     });
   </script>
 </body>
