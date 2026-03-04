@@ -7,6 +7,8 @@
   <meta name="keywords" content="abogados penalistas, derecho penal, compliance penal, defensa penal corporativa, despacho penal México" />
   <title>CHH Penalistas - Integridad, Innovación y Defensa Penal Estratégica</title>
   <link rel="preload" as="image" href="/assets/1logo%20chh%20web%20001-DsULS5Vc.svg" type="image/svg+xml" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/CHH-ABOGADOS-MISION-BtGrpZhG.jpg" type="image/jpeg" fetchpriority="low" />
+  <link rel="preload" as="image" href="/assets/CHH-ABOGADOS-VISION-kalrA3Ac.jpg" type="image/jpeg" fetchpriority="low" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -33,7 +35,7 @@
     }
     a{color:inherit;text-decoration:none}
     .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block;height:auto;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
     .icon-square{width:60px;height:60px;border-radius:18px;background:#161515;display:grid;place-items:center;color:var(--brand-red);box-shadow:0 12px 28px rgba(0,0,0,0.2);position:relative;overflow:hidden}
     .icon-square svg{width:30px;height:30px;stroke:var(--brand-red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
@@ -125,10 +127,11 @@
     .metrics-viewport{overflow:hidden;flex:1}
     .metrics-track{display:flex;gap:var(--card-gap);transform:translateX(0);transition:transform .7s cubic-bezier(0.4,0,0.2,1);will-change:transform}
     .metric-card{flex:0 0 calc((100% - (var(--cards-per-view) - 1)*var(--card-gap))/var(--cards-per-view));background:#fff;border-radius:22px;box-shadow:0 14px 32px rgba(15,23,42,0.08),0 4px 12px rgba(15,23,42,0.04);padding:32px 26px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;border:1px solid rgba(15,23,42,0.06);position:relative;overflow:hidden;isolation:isolate}
-    .metric-card--image::before{content:"";position:absolute;inset:-10%;background-image:var(--card-bg-image,none);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(8px) brightness(.8);transform:scale(1.08);transition:filter .35s ease,transform .35s ease;z-index:0}
-    .metric-card--image::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.7);z-index:1}
+    .metric-card--image::before{content:"";position:absolute;inset:-10%;background-image:var(--card-bg-image,none);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(8px) brightness(.8);transform:scale(1.08) translateZ(0);transition:filter .35s ease,transform .35s ease;z-index:0;will-change:filter,transform;backface-visibility:hidden}
+    .metric-card--image::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.7);z-index:1;transition:background .3s ease}
+    .metric-card--image{transition:opacity .3s ease}
     .metric-card--image>*{position:relative;z-index:2}
-    .metric-card--image:hover::before,.metric-card--image:focus-within::before{filter:blur(4px) brightness(1);transform:scale(1.05)}
+    .metric-card--image:hover::before,.metric-card--image:focus-within::before{filter:blur(4px) brightness(1);transform:scale(1.05) translateZ(0)}
     .metrics-control{width:56px;height:56px;border:none;background:none;padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .3s ease,transform .3s ease;flex-shrink:0;border-radius:50%;--rotate:0deg}
     .metrics-control:hover,.metrics-control:focus-visible{opacity:.85}
     .metrics-control-icon{display:inline-flex;align-items:center;justify-content:center;font-size:33px;line-height:1;color:var(--brand-red);transition:transform .3s ease;transform:rotate(var(--rotate))}
@@ -151,10 +154,11 @@
     .mission-vision-grid{display:grid;gap:24px}
     @media (min-width:768px){.mission-vision-grid{grid-template-columns:repeat(2,1fr)}}
     .mission-card{background:#fff;padding:32px;border-radius:24px;box-shadow:var(--shadow);border:1px solid #e5e7eb;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;isolation:isolate}
-    .mission-card::before{content:"";position:absolute;inset:-10%;background-image:var(--card-bg-image,none);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(8px) brightness(.8);transform:scale(1.08);transition:filter .35s ease,transform .35s ease;z-index:0}
-    .mission-card::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.7);z-index:1}
+    .mission-card::before{content:"";position:absolute;inset:-10%;background-image:var(--card-bg-image,none);background-size:cover;background-position:center;background-repeat:no-repeat;filter:blur(8px) brightness(.8);transform:scale(1.08) translateZ(0);transition:filter .35s ease,transform .35s ease;z-index:0;will-change:filter,transform;backface-visibility:hidden}
+    .mission-card::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.7);z-index:1;transition:background .3s ease}
+    .mission-card{transition:opacity .3s ease}
     .mission-card>*{position:relative;z-index:2}
-    .mission-card:hover::before,.mission-card:focus-within::before{filter:blur(4px) brightness(1);transform:scale(1.05)}
+    .mission-card:hover::before,.mission-card:focus-within::before{filter:blur(4px) brightness(1);transform:scale(1.05) translateZ(0)}
     .mission-card .icon-square{align-self:flex-start}
     .mission-card h3{margin:0;font-size:26px;font-weight:700;font-family:var(--font-secondary);color:var(--brand-gray);text-transform:uppercase;letter-spacing:.08em}
     .mission-card p{margin:0;color:#4b5563;font-size:18px;text-align:justify}
@@ -1455,6 +1459,54 @@
         return !groupedCards.has(card);
       });
 
+      const imageCache = new Map();
+
+      function preloadImage(source){
+        if(imageCache.has(source)){
+          return imageCache.get(source);
+        }
+        const promise = new Promise(function(resolve, reject){
+          const image = new Image();
+          image.decoding = 'async';
+          image.loading = 'lazy';
+
+          const timeout = setTimeout(function(){
+            reject(new Error('Image load timeout'));
+          }, 8000);
+
+          function cleanup(){
+            clearTimeout(timeout);
+          }
+
+          if(typeof image.decode === 'function'){
+            image.src = source;
+            image.decode()
+              .then(function(){
+                cleanup();
+                resolve(source);
+              })
+              .catch(function(error){
+                cleanup();
+                console.warn('Image decode failed:', source, error);
+                resolve(source);
+              });
+          } else {
+            image.onload = function(){
+              cleanup();
+              resolve(source);
+            };
+            image.onerror = function(error){
+              cleanup();
+              console.warn('Image load failed:', source, error);
+              resolve(source);
+            };
+            image.src = source;
+          }
+        });
+        imageCache.set(source, promise);
+        return promise;
+      }
+
       function applyBackground(card){
         if(!card || card.dataset.bgLoaded === 'true' || card.dataset.bgLoading === 'true'){
           return;
@@ -1464,27 +1516,23 @@
           return;
         }
         card.dataset.bgLoading = 'true';
-        const image = new Image();
-        image.decoding = 'async';
-        image.src = source;
 
-        let settled = false;
-        function finalize(){
-          if(settled){
-            return;
-          }
-          settled = true;
-          card.style.setProperty('--card-bg-image', `url("${source}")`);
-          card.dataset.bgLoaded = 'true';
-          delete card.dataset.bgLoading;
-        }
+        preloadImage(source)
+          .then(function(src){
+            if(card.dataset.bgLoaded !== 'true'){
+              card.style.setProperty('--card-bg-image', `url("${src}")`);
+              card.dataset.bgLoaded = 'true';
+              delete card.dataset.bgLoading;
 
-        if(typeof image.decode === 'function'){
-          image.decode().then(finalize).catch(finalize);
-        } else {
-          image.onload = finalize;
-          image.onerror = finalize;
-        }
+              requestAnimationFrame(function(){
+                card.style.opacity = '1';
+              });
+            }
+          })
+          .catch(function(error){
+            console.error('Failed to load background:', source, error);
+            delete card.dataset.bgLoading;
+          });
       }
 
       function preloadGroupBackgrounds(group){
@@ -1497,32 +1545,28 @@
           return;
         }
         group.dataset.bgGroupLoading = 'true';
+
         const tasks = cards.map(function(card){
           const source = card.getAttribute('data-bg-src');
-          if(!source){
-            return Promise.resolve();
-          }
-          return new Promise(function(resolve){
-            const image = new Image();
-            image.decoding = 'async';
-            image.src = source;
-            if(typeof image.decode === 'function'){
-              image.decode().then(resolve).catch(resolve);
-            } else {
-              image.onload = resolve;
-              image.onerror = resolve;
-            }
-          });
+          return source ? preloadImage(source) : Promise.resolve();
         });
-        Promise.allSettled(tasks).then(function(){
-          cards.forEach(function(card){
+
+        Promise.allSettled(tasks).then(function(results){
+          cards.forEach(function(card, index){
             const source = card.getAttribute('data-bg-src');
-            if(!source){
+            if(!source || card.dataset.bgLoaded === 'true'){
               return;
             }
-            card.style.setProperty('--card-bg-image', `url("${source}")`);
-            card.dataset.bgLoaded = 'true';
-            delete card.dataset.bgLoading;
+            const result = results[index];
+            if(result.status === 'fulfilled'){
+              card.style.setProperty('--card-bg-image', `url("${source}")`);
+              card.dataset.bgLoaded = 'true';
+              delete card.dataset.bgLoading;
+
+              requestAnimationFrame(function(){
+                card.style.opacity = '1';
+              });
+            }
           });
           group.dataset.bgGroupLoaded = 'true';
           delete group.dataset.bgGroupLoading;
@@ -1535,29 +1579,34 @@
         return;
       }
 
+      const observerConfig = {
+        rootMargin: '250px 0px',
+        threshold: [0, 0.01]
+      };
+
       if(syncGroups.length){
-        const groupObserver = new IntersectionObserver(function(entries, obs){
+        const groupObserver = new IntersectionObserver(function(entries){
           entries.forEach(function(entry){
             if(entry.isIntersecting){
               preloadGroupBackgrounds(entry.target);
-              obs.unobserve(entry.target);
+              groupObserver.unobserve(entry.target);
             }
           });
-        }, {rootMargin:'360px 0px', threshold:0.01});
+        }, observerConfig);
 
         syncGroups.forEach(function(group){
           groupObserver.observe(group);
         });
       }
 
-      const observer = new IntersectionObserver(function(entries, obs){
+      const observer = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
           if(entry.isIntersecting){
             applyBackground(entry.target);
-            obs.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
-      }, {rootMargin:'320px 0px', threshold:0.01});
+      }, observerConfig);
 
       standaloneCards.forEach(function(card){
         observer.observe(card);
