@@ -282,3 +282,4 @@
     .footer-bottom{margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.12);text-align:center}
     .footer-bottom p{margin:0;color:rgba(255,255,255,0.65);font-family:var(--font-secondary);letter-spacing:.04em;font-size:14px}
     @media (max-width:599px){.footer{padding:56px 0 32px}.footer-bottom{margin-top:40px}}
+    #inicio .hero-content > p.delay-3{text-align:justify;text-justify:inter-word}
